@@ -1,6 +1,8 @@
 package re.forestier.edu;
 
 import org.junit.jupiter.api.*;
+
+import re.forestier.edu.rpg.Affichage;
 import re.forestier.edu.rpg.player;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -30,8 +32,22 @@ public class UnitTests {
         fail();
     }
 
-    
+    // Ajoute "epee" dans l'inventaire et vérifie que l'inventaire contient "epee"
+    @Test
+    @DisplayName("Fill inventory then fetch")
+    void testInventory() {
+        player p = new player("Maxou", "Le mec la avec ses cartes", "ADVENTURER", 100, new ArrayList<>());
+        p.inventory.add("epee");
+        Affichage.afficherJoueur(p);
+        assertThat(p.inventory, hasItem("epee"));
+    }
+
+    // Teste de la classe Affichage par instaciation
+    @Test
+    @DisplayName("Test Affichage")
+    void testAffichage() {
+        new Affichage();
+    } 
 
     
-
 }

@@ -1,0 +1,11 @@
+Joueur Grognak le barbare joué par Maxou
+Niveau : 1 (XP totale : 0)
+
+Capacités :
+   DEF : 1
+   ATK : 3
+   CHA : 3
+   INT : 2
+
+Inventaire :
+   epee

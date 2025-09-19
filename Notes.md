@@ -6,7 +6,8 @@
 
 ### Classe Affichage
 
-- "Affichage" : remplir inventaire pour afficher (Test : `Fill inventory then fetch`)
+- "testInventory" : remplir inventaire pour afficher (Test : `Fill inventory then fetch`)
+- 
 
 ### Classe Player
 
