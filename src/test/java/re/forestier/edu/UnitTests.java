@@ -108,4 +108,15 @@ public class UnitTests {
         assertThat(p.money, is(initialMoney));
     }
 
+    @Test
+    @DisplayName("addMoney with negative value decreases money")
+    void testAddNegativeMoney() {
+        player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
+        int initialMoney = p.money;
+        
+        p.addMoney(-25);
+        
+        assertThat(p.money, is(initialMoney - 25));
+    }
+
 }
