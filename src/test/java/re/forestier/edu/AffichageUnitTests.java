@@ -1,10 +1,11 @@
 package re.forestier.edu;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.hasItem;
-
 import java.util.ArrayList;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.hasItem;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.notNullValue;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -22,10 +23,11 @@ public class AffichageUnitTests {
         assertThat(p.inventory, hasItem("epee"));
     }
 
-    // Test de la classe Affichage par instaciation
+    // Test de la classe Affichage par instaciation puis vérification que l'instance n'est pas nulle
     @Test
     @DisplayName("Test Affichage")
     void testAffichage() {
-        new Affichage();
-    } 
+        Affichage affichage = new Affichage();
+        assertThat(affichage, is(notNullValue()));
+    }
 }

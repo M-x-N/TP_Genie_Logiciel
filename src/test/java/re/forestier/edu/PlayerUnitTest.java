@@ -23,7 +23,7 @@ public class PlayerUnitTest {
         player p = new player("Maxou", "Le mec la avec ses cartes", "ADVENTURER", 100, new ArrayList<>());
         int xp = p.getXp();
         assertThat(xp, is(0));
-    }   
+    }
 
     @Test
     @DisplayName("Impossible to have negative money")
@@ -52,7 +52,7 @@ public class PlayerUnitTest {
         assertThat(p4.getAvatarClass(), is(nullValue()));
     }
 
-    // Test pour enlever de l'argent à un joueur 
+    // Test pour enlever de l'argent à un joueur
     @Test
     @DisplayName("Possible to have positive money")
     void testPositiveMoney() {
@@ -93,9 +93,9 @@ public class PlayerUnitTest {
     void testAddNegativeMoney() {
         player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
         int initialMoney = p.money;
-        
+
         p.addMoney(-25);
-        
+
         assertThat(p.money, is(initialMoney - 25));
     }
 
@@ -103,20 +103,20 @@ public class PlayerUnitTest {
     @DisplayName("Test retrieve player level based on XP")
     void testRetrievePlayerLevel() {
         player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
- 
-        UpdatePlayer.addXp(p, 0);  
+
+        UpdatePlayer.addXp(p, 0);
         assertThat(p.retrieveLevel(), is(1));
-        
-        UpdatePlayer.addXp(p, 10); 
+
+        UpdatePlayer.addXp(p, 10);
         assertThat(p.retrieveLevel(), is(2));
 
-        UpdatePlayer.addXp(p, 27); 
+        UpdatePlayer.addXp(p, 27);
         assertThat(p.retrieveLevel(), is(3));
-        
-        UpdatePlayer.addXp(p, 57); 
+
+        UpdatePlayer.addXp(p, 57);
         assertThat(p.retrieveLevel(), is(4));
-        
-        UpdatePlayer.addXp(p, 111); 
+
+        UpdatePlayer.addXp(p, 111);
         assertThat(p.retrieveLevel(), is(5));
     }
 }
